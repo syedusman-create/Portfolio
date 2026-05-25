@@ -15,38 +15,27 @@ navLinks.forEach((link) => {
   });
 });
 
-const smoothLinks = document.querySelectorAll('a[href^="#"]');
-smoothLinks.forEach((anchor) => {
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    navToggle?.setAttribute('aria-expanded', 'false');
+    navList?.classList.remove('open');
+  }
+});
+
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener('click', (event) => {
     const targetId = anchor.getAttribute('href');
     if (!targetId || targetId === '#') return;
+
     const targetElement = document.querySelector(targetId);
     if (!targetElement) return;
+
     event.preventDefault();
     targetElement.scrollIntoView({ behavior: 'smooth' });
-    targetElement.focus?.({ preventScroll: true });
   });
-});
-
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.2 }
-);
-
-document.querySelectorAll('.section').forEach((section) => {
-  section.classList.add('fade-in');
-  observer.observe(section);
 });
 
 const yearEl = document.querySelector('#year');
 if (yearEl) {
   yearEl.textContent = new Date().getFullYear().toString();
 }
-
