@@ -3,15 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Syed Usman • AI/ML Engineer Portfolio</title>
+    <title>Syed Usman | AI/ML Engineer</title>
     <meta
       name="description"
-      content="Syed Usman — AI/ML engineer helping teams ship models, dashboards, and automations with humor and reliability."
+      content="Syed Usman builds AI assistants, computer vision systems, and full-stack ML products for practical problems."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <link
@@ -23,347 +23,249 @@
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body class="business-page">
     <header class="site-header">
-      <div class="logo">Syed<span>Usman</span></div>
-      <nav class="site-nav" aria-label="Main">
-        <button
-          class="nav-toggle"
-          aria-controls="primary-navigation"
-          aria-expanded="false"
-        >
+      <a class="mark" href="#hero" aria-label="Syed Usman home">SU</a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
           <span class="sr-only">Toggle navigation</span>
-          <span></span>
-          <span></span>
-          <span></span>
+          <span></span><span></span><span></span>
         </button>
         <ul id="primary-navigation">
-          <li><a href="#hero">Home</a></li>
+          <li><a href="#capabilities">Capabilities</a></li>
+          <li><a href="#work">Work</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#translator">Buzzwords</a></li>
-          <li><a href="#testimonials">Testimonials</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li><a class="route-pill" href="technical.html">Developer View <i class="fa-solid fa-arrow-right"></i></a></li>
         </ul>
       </nav>
     </header>
 
     <main>
-      <section id="hero" class="hero section">
-        <div class="status-badge">Currently accepting new clients</div>
-        <p class="eyebrow">Hi, I'm <span>Syed Usman</span></p>
-        <h1>AI/ML Engineer • Freelancer • Professional Overthinker</h1>
-        <p class="hero-subtext">
-          I train machine learning models, wrangle dashboards, and automate the
-          repetitive stuff so you can hit KPIs and maybe even sleep.
+      <section id="hero" class="hero-editorial section">
+        <div class="hero-orbit" aria-hidden="true"></div>
+        <div class="availability">Available for AI/ML projects</div>
+        <h1>AI that finds answers.<br /><em>Vision that understands motion.</em></h1>
+        <p class="intro">
+          Hello, I am <strong>Syed Usman</strong>, an AI/ML Engineer and Full-Stack Developer
+          from Bangalore, building assistants and computer vision products that make useful
+          decisions easier.
         </p>
-        <p class="hero-microcopy">Warning: may optimize your business processes.</p>
-        <div class="hero-cta">
-          <a class="btn primary" href="#contact">Work With Me</a>
-          <a class="btn ghost" href="#projects">View Projects</a>
+        <div class="hero-actions">
+          <a class="button" href="#work">View My Work <i class="fa-solid fa-arrow-right"></i></a>
+          <a class="inline-link" href="mailto:syed18usman18@gmail.com">syed18usman18@gmail.com</a>
         </div>
-        <div class="hero-meta">
-          <span><i class="fa-solid fa-location-dot"></i> Bangalore</span>
-          <span><i class="fa-solid fa-envelope"></i> syed18usman18@gmail.com</span>
+        <div class="horizon" aria-hidden="true"></div>
+      </section>
+
+      <section id="capabilities" class="framed-section section">
+        <div class="section-label"><span>01</span> Capabilities</div>
+        <div class="section-heading centered">
+          <h2>Making intelligent systems<br /><em>practical to use.</em></h2>
+          <p>Same technical depth, translated into outcomes your team can actually act on.</p>
+        </div>
+        <div class="bento-grid">
+          <article class="bento large">
+            <p class="mono-label">Conversational AI</p>
+            <h3>Assistants built for the kind of answer you need.</h3>
+            <p>
+              Guided rule-based bots, meaning-aware semantic search, natural LLM assistants,
+              database questions with Text-to-SQL, and document-grounded answers with RAG.
+            </p>
+            <div class="chip-row">
+              <span>Customer Support</span><span>Internal Knowledge</span><span>Analytics</span>
+            </div>
+          </article>
+          <article class="bento visual">
+            <p class="mono-label">Computer Vision</p>
+            <div class="vision-signal" aria-hidden="true">
+              <span></span><span></span><span></span><span></span>
+            </div>
+            <h3>Video into measurable events.</h3>
+            <p>Detection, tracking, pose estimation, fatigue signals, and movement analysis.</p>
+          </article>
+          <article class="bento">
+            <p class="mono-label">Structured Data</p>
+            <h3>Ask a business question. Get a chart-ready answer.</h3>
+            <p>Text-to-SQL analytics for teams who need insight without writing queries.</p>
+          </article>
+          <article class="bento">
+            <p class="mono-label">Unstructured Data</p>
+            <h3>Make reports and documents searchable.</h3>
+            <p>RAG-based assistants that retrieve evidence before they answer.</p>
+          </article>
+          <article class="bento accent">
+            <p class="mono-label">For Engineers</p>
+            <h3>Want methods, models, and architecture?</h3>
+            <a href="technical.html">Open the developer portfolio <i class="fa-solid fa-arrow-right"></i></a>
+          </article>
         </div>
       </section>
 
-      <section id="about" class="section">
-        <div class="section-heading">
-          <p class="eyebrow">Who Broke Production? Not Me.</p>
-          <h2>About Me</h2>
+      <section id="work" class="framed-section section work-section">
+        <div class="section-label"><span>02</span> Selected Work</div>
+        <div class="section-heading split">
+          <h2>Work that moves<br /><em>from model to product.</em></h2>
+          <p>
+            Projects across safety, enterprise workflows, education, sport, and analytics.
+          </p>
         </div>
-        <div class="about-grid">
+        <div class="projects-list">
+          <article class="project-feature">
+            <div class="project-number">01</div>
+            <div class="project-content">
+              <p class="mono-label">Industry Client Project | E2E Rosh IT Solutions</p>
+              <h3>Industrial Safety Vision Platform</h3>
+              <p>
+                Built computer vision modules for safety monitoring in an industrial environment:
+                driver fatigue detection, worker proximity monitoring, oil leak detection, and
+                pose-based fall alerts.
+              </p>
+              <div class="chip-row">
+                <span>Computer Vision</span><span>MediaPipe</span><span>Pose Estimation</span><span>FastAPI</span>
+              </div>
+            </div>
+            <div class="project-art safety-art" aria-hidden="true">
+              <div class="scan-frame"></div>
+              <span class="person-dot"></span>
+              <span class="alert-ring"></span>
+              <p>SAFETY MONITORING<br />STATUS: ACTIVE</p>
+            </div>
+          </article>
+          <article class="project-row">
+            <div class="project-number">02</div>
+            <div>
+              <p class="mono-label">Python | Frappe | LLM | RAG</p>
+              <h3>ERP Internal Chatbot</h3>
+            </div>
+            <p>Plain-English HR, inventory, and finance queries inside ERPNext, designed within sandbox constraints.</p>
+          </article>
+          <article class="project-row">
+            <div class="project-number">03</div>
+            <div>
+              <p class="mono-label">Python | SQL Server | LLM</p>
+              <h3>Adventure Works SQL Chatbot</h3>
+            </div>
+            <p>Text-to-SQL assistant producing multi-table analytics and visual reports without manual SQL.</p>
+          </article>
+          <article class="project-row">
+            <div class="project-number">04</div>
+            <div>
+              <p class="mono-label">RAG | Node.js | MongoDB</p>
+              <h3>VTU Academic Chatbot</h3>
+            </div>
+            <p>Syllabus-specific assistant with notes retrieval, authentication, uploads, and moderation.</p>
+          </article>
+          <article class="project-row">
+            <div class="project-number">05</div>
+            <div>
+              <p class="mono-label">Flutter | TensorFlow Lite | MoveNet</p>
+              <h3>ScoutX Sports Analysis</h3>
+            </div>
+            <p>Mobile pose-analysis app for rep counting, form feedback, and sports performance assessment.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="football" class="framed-section section concept-section">
+        <div class="section-label"><span>03</span> Concept Case Study</div>
+        <div class="concept-layout">
           <div>
-            <p>
-              I'm Syed Usman, an AI/ML engineering student who freelances to keep
-              the GPU bills paid and the neurons firing. I help teams turn vague
-              ideas into models, dashboards, and tiny automations that actually
-              ship.
+            <p class="mono-label">Computer Vision + Chatbot Intelligence</p>
+            <h2>Football Match<br /><em>Analytics Copilot</em></h2>
+            <p class="concept-copy">
+              A portfolio concept combining my computer vision and assistant work:
+              upload footage, detect players and the ball, track movement and velocity,
+              then ask questions about the match in plain English.
             </p>
+            <div class="question-stack">
+              <span>"Which player had the fastest transition?"</span>
+              <span>"Show movement before the winning goal."</span>
+              <span>"Summarise the pressing pattern."</span>
+            </div>
+          </div>
+          <div class="pitch-panel">
+            <div class="pitch" aria-hidden="true">
+              <span class="player player-a"></span>
+              <span class="player player-b"></span>
+              <span class="player player-c"></span>
+              <span class="player player-d"></span>
+              <span class="ball"></span>
+              <span class="route"></span>
+            </div>
+            <div class="match-steps">
+              <span>Detect</span><i class="fa-solid fa-arrow-right"></i>
+              <span>Track</span><i class="fa-solid fa-arrow-right"></i>
+              <span>Analyse</span><i class="fa-solid fa-arrow-right"></i>
+              <span>Ask</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="framed-section section about-section">
+        <div class="section-label"><span>04</span> About</div>
+        <div class="about-layout">
+          <div class="about-intro">
+            <h2>An engineer interested in what models <em>do after training.</em></h2>
             <p>
-              Whether it's a scrappy startup or a sleepy enterprise team, I bring
-              rapid experimentation, explainable insights, and “yes this will be
-              in production by Friday” energy.
-            </p>
-            <p>
-              I speak data, manage stakeholders, and occasionally touch grass.
-              Mostly I'm building ML or DL models, digging through data analytics,
-              and crafting useful chatbot experiences.
+              I build across machine learning and product development: from pose estimation
+              and real-time APIs to RAG pipelines and web experiences. I am currently completing
+              my B.E. in Artificial Intelligence &amp; Machine Learning at T John Institute of Technology.
             </p>
           </div>
-          <div class="about-details">
-            <div>
-              <h3>Fun Facts</h3>
+          <div class="resume-columns">
+            <article>
+              <p class="mono-label">Experience</p>
+              <h3>AI/ML Intern</h3>
+              <p>E2E Rosh IT Solutions</p>
+              <small>January 2026 - Present</small>
+            </article>
+            <article>
+              <p class="mono-label">Education</p>
+              <h3>B.E. Artificial Intelligence &amp; ML</h3>
+              <p>T John Institute of Technology</p>
+              <small>2022 - 2026 | CGPA: 8.0 / 10</small>
+            </article>
+            <article>
+              <p class="mono-label">Certifications</p>
               <ul>
-                <li>Speaks Python more fluently than human languages.</li>
-                <li>Knows the difference between a bug and a feature (usually).</li>
-                <li>Believes documentation is love letters to future me.</li>
+                <li>Data Structures &amp; Algorithms - NPTEL</li>
+                <li>NLP Fundamentals - Infosys Springboard</li>
+                <li>Machine Learning with Python - Innomatics Research Labs</li>
               </ul>
-            </div>
-            <div>
-              <h3>Tech Stack</h3>
-              <div class="pill-group">
-                <span class="pill">Python</span>
-                <span class="pill">PyTorch</span>
-                <span class="pill">TensorFlow</span>
-                <span class="pill">scikit-learn</span>
-                <span class="pill">NumPy</span>
-                <span class="pill">Pandas</span>
-                <span class="pill">SQL</span>
-                <span class="pill">JavaScript</span>
-                <span class="pill">LangChain</span>
-                <span class="pill">Streamlit</span>
-              </div>
-            </div>
+            </article>
           </div>
         </div>
       </section>
 
-      <section id="services" class="section">
-        <div class="section-heading">
-          <p class="eyebrow">Things I Do For Money (Legally)</p>
-          <h2>How I Can Help</h2>
-        </div>
-        <div class="card-grid services-grid">
-          <article class="card">
-            <h3>AI/ML Prototyping</h3>
-            <p>
-              Quick-turn experiments that prove if your idea works before you buy
-              another enterprise license.
-            </p>
-            <p class="microcopy">
-              Includes “no, that metric actually matters” consulting.
-            </p>
-          </article>
-          <article class="card">
-            <h3>Data Analysis & Dashboards</h3>
-            <p>
-              Clean, visual dashboards that translate your messy data into
-              decisions your team can act on.
-            </p>
-            <p class="microcopy">
-              I make sense of your data so you don’t have to nod in meetings.
-            </p>
-          </article>
-          <article class="card">
-            <h3>Automation & Small Tools</h3>
-            <p>
-              Custom scripts, chatbot workflows, and internal tools that remove
-              copy-paste work from your team's day.
-            </p>
-            <p class="microcopy">Yes, even that spreadsheet routine you dread.</p>
-          </article>
-          <article class="card">
-            <h3>Model Evaluation & Tuning</h3>
-            <p>
-              Deep dives into why your model behaves like a drama queen and how to
-              calm it down with better data and tuning.
-            </p>
-            <p class="microcopy">Therapy for algorithms, billed hourly.</p>
-          </article>
-        </div>
-      </section>
-
-      <section id="projects" class="section">
-        <div class="section-heading">
-          <p class="eyebrow">Things I’ve Built So Far</p>
-          <h2>Projects</h2>
-        </div>
-        <div class="card-grid project-grid">
-          <article class="card">
-            <div class="card-header">
-              <h3>Spam Classifier for Emails</h3>
-              <div class="project-links">
-                <a href="{{PROJECT_1_GITHUB}}" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-                <a href="{{PROJECT_1_DEMO}}" aria-label="Live demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-              </div>
-            </div>
-            <p>Deployed a lightweight classifier that cut false positives by 42% for a SaaS inbox tool.</p>
-            <div class="tags">
-              <span>Python</span>
-              <span>scikit-learn</span>
-              <span>FastAPI</span>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card-header">
-              <h3>Retail Demand Forecast</h3>
-              <div class="project-links">
-                <a href="{{PROJECT_2_GITHUB}}" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-                <a href="{{PROJECT_2_DEMO}}" aria-label="Live demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-              </div>
-            </div>
-            <p>Built a forecasting pipeline that trimmed inventory waste by 18% for a regional retailer.</p>
-            <div class="tags">
-              <span>PyTorch</span>
-              <span>Time Series</span>
-              <span>Azure</span>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card-header">
-              <h3>Executive KPI Dashboard</h3>
-              <div class="project-links">
-                <a href="{{PROJECT_3_GITHUB}}" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-                <a href="{{PROJECT_3_DEMO}}" aria-label="Live demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-              </div>
-            </div>
-            <p>Designed a multi-source dashboard with alerts so leadership stopped pinging engineers at midnight.</p>
-            <div class="tags">
-              <span>Dash</span>
-              <span>Plotly</span>
-              <span>PostgreSQL</span>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card-header">
-              <h3>Customer Support Chatbot</h3>
-              <div class="project-links">
-                <a href="{{PROJECT_4_GITHUB}}" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-                <a href="{{PROJECT_4_DEMO}}" aria-label="Live demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-              </div>
-            </div>
-            <p>Launched an LLM-powered assistant that resolved 63% of tickets without human escalation.</p>
-            <div class="tags">
-              <span>LangChain</span>
-              <span>OpenAI</span>
-              <span>Next.js</span>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section id="translator" class="section">
-        <div class="section-heading">
-          <p class="eyebrow">Buzzword Survival Kit</p>
-          <h2>AI/ML Buzzword Translator</h2>
-        </div>
-        <div class="translator-table">
-          <div class="translator-row translator-head">
-            <span>Jargon</span>
-            <span>Plain English</span>
+      <section id="contact" class="section closing-section">
+        <div class="closing-card">
+          <p class="mono-label">Open To Work | Freelance Projects</p>
+          <h2>From an idea to an intelligent product.<br /><em>Let us make it useful.</em></h2>
+          <p>I am available for AI/ML roles and projects involving assistants, data, or computer vision.</p>
+          <div class="closing-actions">
+            <a class="button" href="mailto:syed18usman18@gmail.com">Get In Touch <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="https://github.com/syedusman-create" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/syed-usman-8a0903372" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
           </div>
-          <div class="translator-row">
-            <span>“End-to-end pipeline”</span>
-            <span>Code that does all the boring steps so you don’t have to.</span>
-          </div>
-          <div class="translator-row">
-            <span>“Production-ready”</span>
-            <span>It won’t explode when a real user touches it. Probably.</span>
-          </div>
-          <div class="translator-row">
-            <span>“Leveraging LLMs”</span>
-            <span>We gave the chatbot context so it stops hallucinating pricing.</span>
-          </div>
-          <div class="translator-row">
-            <span>“Data-driven decisions”</span>
-            <span>We finally stopped guessing and used the dashboard.</span>
-          </div>
-          <div class="translator-row">
-            <span>“Model interpretability”</span>
-            <span>Being able to explain results without summoning a PhD.</span>
-          </div>
-        </div>
-      </section>
-
-      <section id="testimonials" class="section">
-        <div class="section-heading">
-          <p class="eyebrow">Testimonials (I Promise I Didn't Write These)</p>
-          <h2>What People Say</h2>
-        </div>
-        <div class="card-grid testimonial-grid">
-          <article class="card testimonial">
-            <i class="fa-solid fa-quote-left" aria-hidden="true"></i>
-            <p>
-              “Syed took our pile of spreadsheets and turned it into an automated
-              dashboard that our exec team actually uses. He even added jokes in
-              the commit messages.”
-            </p>
-            <p class="author">Priya N. — Product Lead, DataVista</p>
-          </article>
-          <article class="card testimonial">
-            <i class="fa-solid fa-quote-left" aria-hidden="true"></i>
-            <p>
-              “He built a chatbot MVP in two weeks that handled 60% of our support
-              chats. The instructions were ‘please help’ and he delivered anyway.”
-            </p>
-            <p class="author">Colin R. — COO, HelpDeskly</p>
-          </article>
-          <article class="card testimonial">
-            <i class="fa-solid fa-quote-left" aria-hidden="true"></i>
-            <p>
-              “Syed kept us looped in, kept stakeholders calm, and kept the model
-              accuracy above 90%. Hire him before I do again.”
-            </p>
-            <p class="author">Meera S. — Head of Analytics, BrightFoods</p>
-          </article>
-        </div>
-      </section>
-
-      <section id="contact" class="section contact-section">
-        <div class="section-heading">
-          <p class="eyebrow">No Spam Funnels. Just People.</p>
-          <h2>Ready to Automate Your Chaos?</h2>
-        </div>
-        <div class="contact-grid">
-          <div class="contact-info">
-            <p>
-              Tell me about your tangled data, half-built models, or dreams of an
-              internal tool that actually works. I’ll reply faster than most cron
-              jobs.
-            </p>
-            <div class="contact-links">
-              <a href="mailto:syed18usman18@gmail.com" class="btn primary"
-                >Email Me</a
-              >
-              <div class="social-links">
-                <a href="https://github.com/syedusman-create" aria-label="GitHub"
-                  ><i class="fa-brands fa-github"></i
-                ></a>
-                <a href="https://www.linkedin.com/in/syed-usman-8a0903372?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" aria-label="LinkedIn"
-                  ><i class="fa-brands fa-linkedin"></i
-                ></a>
-              </div>
-            </div>
-            <p class="microcopy">
-              No spam, no endless funnels. Just a human (and maybe a smart script)
-              replying.
-            </p>
-          </div>
-          <form class="contact-form" aria-label="Contact form">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Ada Lovelace" />
-
-            <label for="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="you@example.com"
-            />
-
-            <label for="message">Project details</label>
-            <textarea
-              id="message"
-              name="message"
-              rows="4"
-              placeholder="What are we building?"
-            ></textarea>
-
-            <button type="submit" class="btn primary">Send Message</button>
-          </form>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p>© <span id="year"></span> Syed Usman. Built with too much coffee and just enough debugging.</p>
-      <a href="#hero" class="back-to-top">Back to top ↑</a>
+      <div>
+        <a class="mark" href="#hero" aria-label="Syed Usman home">SU</a>
+        <p>Syed Usman<br />AI/ML Engineer &amp; Full-Stack Developer</p>
+      </div>
+      <div class="footer-links">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="technical.html">Developer View</a>
+        <a href="mailto:syed18usman18@gmail.com">Email</a>
+      </div>
+      <p>&copy; <span id="year"></span> Syed Usman. Bangalore, India.</p>
     </footer>
-
     <script src="script.js"></script>
   </body>
 </html>
-
