@@ -1,196 +1,548 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Syed Usman | Developer Portfolio</title>
-    <meta
-      name="description"
-      content="Developer-facing AI/ML portfolio for Syed Usman: computer vision, RAG, Text-to-SQL, LLM systems, and full-stack ML engineering."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body class="technical-page">
-    <header class="site-header">
-      <a class="mark" href="#hero" aria-label="Syed Usman developer home">SU<span>/dev</span></a>
-      <nav class="site-nav" aria-label="Primary navigation">
-        <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span></span><span></span><span></span>
-        </button>
-        <ul id="primary-navigation">
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#nlp">NLP / LLM</a></li>
-          <li><a href="#vision">Vision</a></li>
-          <li><a href="#build">Architecture</a></li>
-          <li><a class="route-pill" href="index.html">Simple View <i class="fa-solid fa-arrow-right"></i></a></li>
-        </ul>
-      </nav>
-    </header>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Syed Usman | Developer Portfolio</title>
+<meta
+  name="description"
+  content="Developer-facing AI/ML portfolio for Syed Usman: RAG pipelines, Text-to-SQL, multi-agent systems, LLM orchestration, and computer vision."
+/>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+  rel="stylesheet"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+<link rel="stylesheet" href="styles.css" />
 
-    <main>
-      <section id="hero" class="hero-editorial developer-hero section">
-        <div class="hero-orbit" aria-hidden="true"></div>
-        <p class="mono-label hero-label">AI/ML Engineer | Developer Portfolio</p>
-        <h1>Models that observe.<br /><em>Systems that answer with context.</em></h1>
-        <p class="intro">
-          I build CV inference services, retrieval-grounded assistants, Text-to-SQL
-          analytics, and full-stack products around them.
-        </p>
-        <div class="hero-actions">
-          <a class="button" href="#experience">Inspect Work <i class="fa-solid fa-arrow-right"></i></a>
-          <a class="inline-link" href="mailto:syed18usman18@gmail.com">Contact</a>
+<!-- Extra styles scoped only to the new flagship demo card and stack table -->
+<style>
+  /* ── Flagship demo card ─────────────────────────────────────── */
+  .flagship-section {
+    padding: var(--space-xl) var(--space-lg);
+  }
+
+  .flagship-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+
+  @media (max-width: 820px) {
+    .flagship-card { grid-template-columns: 1fr; }
+  }
+
+  .flagship-info {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    border-right: 1px solid var(--border);
+  }
+
+  @media (max-width: 820px) {
+    .flagship-info { border-right: none; border-bottom: 1px solid var(--border); }
+  }
+
+  .flagship-info h2 {
+    font-family: var(--font-serif);
+    font-size: clamp(1.5rem, 3vw, 2.1rem);
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  .flagship-info h2 em { font-style: italic; color: var(--violet); }
+
+  .flagship-info p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .flagship-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 0.25rem;
+  }
+
+  .flagship-actions .button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .flagship-actions .ghost-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.6rem 1.1rem;
+    border: 1px solid var(--border);
+    border-radius: 0.375rem;
+    font-size: 0.85rem;
+    color: var(--text);
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .flagship-actions .ghost-button:hover {
+    border-color: var(--violet);
+    color: var(--violet);
+  }
+
+  /* Architecture diagram inside flagship */
+  .flagship-arch {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .flagship-arch .mono-label { margin-bottom: 0.25rem; }
+
+  .arch-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .arch-node {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.65rem 0.9rem;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    font-size: 0.82rem;
+    font-family: var(--font-mono);
+  }
+
+  .arch-node .node-icon {
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    flex-shrink: 0;
+  }
+
+  .arch-node.router .node-icon { background: rgba(139,92,246,0.15); color: var(--violet); }
+  .arch-node.rag    .node-icon { background: rgba(16,185,129,0.12); color: #10b981; }
+  .arch-node.sql    .node-icon { background: rgba(59,130,246,0.12); color: #3b82f6; }
+  .arch-node.out    .node-icon { background: rgba(245,158,11,0.12);  color: #f59e0b; }
+
+  .arch-node span.label { color: var(--text); }
+  .arch-node span.sub   { color: var(--text-muted); margin-left: auto; font-size: 0.75rem; }
+
+  .arch-arrow {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.7rem;
+    line-height: 1;
+  }
+
+  .stack-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.25rem;
+  }
+
+  .stack-chips span {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    padding: 0.2rem 0.55rem;
+    border: 1px solid var(--border);
+    border-radius: 0.25rem;
+    color: var(--text-muted);
+  }
+
+  /* ── Elevated method cards ─────────────────────────────────── */
+  .method-grid .flagship-method {
+    border-color: var(--violet);
+    background: linear-gradient(135deg, rgba(139,92,246,0.04) 0%, var(--surface) 100%);
+  }
+
+  .flagship-method .demo-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    background: var(--violet);
+    color: #fff;
+    font-size: 0.68rem;
+    font-family: var(--font-mono);
+    padding: 0.2rem 0.55rem;
+    border-radius: 0.25rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .flagship-method .demo-badge i { font-size: 0.6rem; }
+
+  /* ── Open to work banner ───────────────────────────────────── */
+  .otw-banner {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.9rem;
+    border: 1px solid rgba(16,185,129,0.4);
+    border-radius: 2rem;
+    font-size: 0.78rem;
+    font-family: var(--font-mono);
+    color: #10b981;
+    margin-bottom: 1rem;
+  }
+
+  .otw-banner::before {
+    content: '';
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: #10b981;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.3; }
+  }
+</style>
+</head>
+
+<body class="technical-page">
+
+<header class="site-header">
+  <a class="mark" href="#hero" aria-label="Syed Usman developer home">SU<span>/dev</span></a>
+  <nav class="site-nav" aria-label="Primary navigation">
+    <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+      <span class="sr-only">Toggle navigation</span>
+      <span></span><span></span><span></span>
+    </button>
+    <ul id="primary-navigation">
+      <li><a href="#demo">Live Demo</a></li>
+      <li><a href="#nlp">RAG / LLM</a></li>
+      <li><a href="#vision">Vision</a></li>
+      <li><a href="#build">Architecture</a></li>
+      <li><a class="route-pill" href="index.html">Simple View <i class="fa-solid fa-arrow-right"></i></a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ── HERO ──────────────────────────────────────────────────── -->
+  <section id="hero" class="hero-editorial developer-hero section">
+    <div class="hero-orbit" aria-hidden="true"></div>
+    <p class="mono-label hero-label">AI/ML Engineer | Developer Portfolio</p>
+    <h1>RAG pipelines.<br /><em>SQL that answers questions.</em><br />Systems built to ship.</h1>
+    <p class="intro">
+      I build retrieval-grounded assistants, Text-to-SQL analytics, and computer vision
+      services — connected into production-ready full-stack products.
+    </p>
+    <div class="hero-actions">
+      <a class="button" href="#demo">See Live Demo <i class="fa-solid fa-arrow-right"></i></a>
+      <a class="inline-link" href="mailto:syed18usman18@gmail.com">Contact</a>
+    </div>
+  </section>
+
+  <!-- ── FLAGSHIP LIVE DEMO ─────────────────────────────────────── -->
+  <section id="demo" class="flagship-section section">
+    <div class="section-label"><span>01</span> Flagship Project</div>
+
+    <div class="flagship-card">
+
+      <!-- Left: description -->
+      <div class="flagship-info">
+        <div>
+          <div class="otw-banner">Live &amp; Deployed</div>
+          <h2>Enterprise RAG &amp; SQL<br /><em>Copilot</em></h2>
         </div>
-      </section>
 
-      <section id="experience" class="framed-section section">
-        <div class="section-label"><span>01</span> Experience</div>
-        <div class="experience-card">
-          <div class="experience-title">
-            <p class="mono-label">January 2026 - Present</p>
-            <h2>AI/ML Intern</h2>
-            <p>E2E Rosh IT Solutions</p>
+        <p>
+          A production platform that routes any natural-language query to the right
+          engine — vector retrieval for documents, validated T-SQL generation for relational
+          data — then returns grounded answers with inline visualizations and an
+          explainability trace.
+        </p>
+
+        <div>
+          <p class="mono-label" style="margin-bottom: 0.6rem;">What it does</p>
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.45rem;">
+            <li style="display: flex; gap: 0.6rem; align-items: flex-start; font-size: 0.88rem; color: var(--text-muted);">
+              <i class="fa-solid fa-circle-check" style="color: var(--violet); margin-top: 0.2rem; flex-shrink: 0;"></i>
+              Multi-agent query routing (RAG vs SQL decided at runtime)
+            </li>
+            <li style="display: flex; gap: 0.6rem; align-items: flex-start; font-size: 0.88rem; color: var(--text-muted);">
+              <i class="fa-solid fa-circle-check" style="color: var(--violet); margin-top: 0.2rem; flex-shrink: 0;"></i>
+              Dynamic bar, line &amp; pie visualizations from SQL results
+            </li>
+            <li style="display: flex; gap: 0.6rem; align-items: flex-start; font-size: 0.88rem; color: var(--text-muted);">
+              <i class="fa-solid fa-circle-check" style="color: var(--violet); margin-top: 0.2rem; flex-shrink: 0;"></i>
+              Explainability panel — shows which source answered the query and why
+            </li>
+            <li style="display: flex; gap: 0.6rem; align-items: flex-start; font-size: 0.88rem; color: var(--text-muted);">
+              <i class="fa-solid fa-circle-check" style="color: var(--violet); margin-top: 0.2rem; flex-shrink: 0;"></i>
+              Supabase pgvector + AdventureWorks SQL dataset
+            </li>
+          </ul>
+        </div>
+
+        <div class="flagship-actions">
+          <a class="button" href="https://rag-demo-kip2vshe8-syed12.vercel.app/" target="_blank" rel="noopener noreferrer">
+            Launch Demo <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+          <a class="ghost-button" href="https://github.com/syedusman-create/RAGDemo" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-github"></i> View Source
+          </a>
+        </div>
+
+        <div class="stack-chips">
+          <span>FastAPI</span><span>LangChain</span><span>pgvector</span><span>Supabase</span>
+          <span>React</span><span>TypeScript</span><span>Docker</span>
+        </div>
+      </div>
+
+      <!-- Right: architecture diagram -->
+      <div class="flagship-arch">
+        <p class="mono-label">System Architecture</p>
+
+        <div class="arch-flow">
+          <div class="arch-node router">
+            <span class="node-icon"><i class="fa-solid fa-shuffle"></i></span>
+            <span class="label">router_service.py</span>
+            <span class="sub">intent classifier</span>
           </div>
-          <div class="experience-detail">
-            <p class="mono-label">Anonymized Industry Client Project</p>
-            <h3>Computer Vision Safety Platform</h3>
-            <ul>
-              <li>Implemented driver fatigue detection with PERCLOS scoring using MediaPipe facial landmarks.</li>
-              <li>Built worker proximity monitoring, oil leak detection, and pose-estimation-based fall alert modules.</li>
-              <li>Developed FastAPI services for real-time inference results through REST APIs.</li>
-            </ul>
-            <div class="chip-row">
-              <span>Python</span><span>FastAPI</span><span>MediaPipe</span><span>Pose Estimation</span><span>REST APIs</span>
+
+          <div class="arch-arrow">↙ &nbsp;&nbsp;&nbsp; ↘</div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem;">
+            <div class="arch-node rag">
+              <span class="node-icon"><i class="fa-solid fa-file-lines"></i></span>
+              <span class="label">rag_service</span>
+            </div>
+            <div class="arch-node sql">
+              <span class="node-icon"><i class="fa-solid fa-database"></i></span>
+              <span class="label">sql_service</span>
             </div>
           </div>
-        </div>
-      </section>
 
-      <section id="nlp" class="framed-section section">
-        <div class="section-label"><span>02</span> Conversational Systems</div>
-        <div class="section-heading split">
-          <h2>Assistant patterns selected by <em>risk and data shape.</em></h2>
-          <p>From strict intent flows to retrieved context and validated database queries.</p>
-        </div>
-        <div class="method-grid">
-          <article>
-            <p class="mono-label">01 | Rule Based</p>
-            <h3>Controlled Workflows</h3>
-            <p>Deterministic dialogue paths for fixed processes and high-control interactions.</p>
-            <ul><li>Decision trees</li><li>Keyword and regex routing</li><li>Validated input slots</li></ul>
-          </article>
-          <article>
-            <p class="mono-label">02 | Semantic</p>
-            <h3>Intent and Similarity</h3>
-            <p>Route questions by meaning when users phrase the same request differently.</p>
-            <ul><li>Embeddings</li><li>Cosine similarity</li><li>NER and confidence thresholds</li></ul>
-          </article>
-          <article>
-            <p class="mono-label">03 | LLM</p>
-            <h3>Generative Assistants</h3>
-            <p>Flexible conversations with structured outputs and controlled tool calls.</p>
-            <ul><li>System prompting</li><li>Few-shot examples</li><li>Guardrails and evals</li></ul>
-          </article>
-          <article class="highlight-method">
-            <p class="mono-label">04 | Text-to-SQL</p>
-            <h3>Adventure Works Analytics Bot</h3>
-            <p>Natural language to T-SQL across sales, HR, and production joins, with bar, line, and pie chart output.</p>
-            <ul><li>Schema grounding</li><li>Validated query generation</li><li>Business visualisation</li></ul>
-          </article>
-          <article class="highlight-method">
-            <p class="mono-label">05 | RAG</p>
-            <h3>ERP and VTU Knowledge Bots</h3>
-            <p>Grounded answers for enterprise records and academic resources using retrieved context.</p>
-            <ul><li>Chunking and embeddings</li><li>Context assembly</li><li>Permission-aware or authenticated access</li></ul>
-          </article>
-          <article class="highlight-method">
-            <p class="mono-label">06 | Unified Copilot [Live]</p>
-            <h3>Enterprise RAG &amp; SQL Copilot</h3>
-            <p>Production platform combining RAG and Text-to-SQL with multi-agent query routing, visualizations, and explainability.</p>
-            <ul>
-              <li><a href="https://rag-demo-kip2vshe8-syed12.vercel.app/" target="_blank" rel="noopener noreferrer" style="color: var(--violet); text-decoration: underline; font-weight: 500;">Launch Live Demo <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.72rem; margin-left: 0.15rem;"></i></a></li>
-              <li>Supabase pgvector / LangChain</li>
-              <li>React / TypeScript / FastAPI</li>
-            </ul>
-          </article>
-        </div>
-      </section>
+          <div class="arch-arrow">↓</div>
 
-      <section id="vision" class="framed-section section">
-        <div class="section-label"><span>03</span> Computer Vision</div>
-        <div class="section-heading split">
-          <h2>Pixels, landmarks,<br /><em>tracks and decisions.</em></h2>
-          <p>Vision skills used in safety monitoring and real-time sports performance analysis.</p>
-        </div>
-        <div class="pipeline-grid">
-          <article><span>01</span><h3>Detection</h3><p>Identify safety events, workers, objects, and scene signals frame by frame.</p><small>Object Detection</small></article>
-          <article><span>02</span><h3>Landmarks</h3><p>Use facial landmarks and PERCLOS measures for fatigue monitoring.</p><small>MediaPipe</small></article>
-          <article><span>03</span><h3>Pose</h3><p>Skeleton-based action recognition for falls and exercise form assessment.</p><small>MoveNet | Pose Estimation</small></article>
-          <article><span>04</span><h3>Temporal Analysis</h3><p>Extend movement features into tracking, velocity, and sequential event modelling.</p><small>Tracking | LSTM</small></article>
-        </div>
-        <article class="resume-project">
-          <p class="mono-label">Mobile Vision Project</p>
-          <h3>ScoutX Sports Performance Analysis</h3>
-          <p>Flutter app using TensorFlow Lite MoveNet for live joint tracking, repetition counting, and posture-correction feedback.</p>
-          <div class="chip-row"><span>Flutter</span><span>TensorFlow Lite</span><span>MoveNet</span></div>
-        </article>
-      </section>
-
-      <section id="build" class="framed-section section architecture-section">
-        <div class="section-label"><span>04</span> Architecture Concept</div>
-        <div class="section-heading centered">
-          <h2>Football Match <em>Analytics Copilot</em></h2>
-          <p>Applying the assistant and vision toolset to one searchable match-analysis workflow.</p>
-        </div>
-        <div class="architecture-flow">
-          <div><strong>Video</strong><span>frames</span></div>
-          <i class="fa-solid fa-arrow-right"></i>
-          <div><strong>Detection + Tracking</strong><span>players / ball</span></div>
-          <i class="fa-solid fa-arrow-right"></i>
-          <div><strong>Pose + Velocity</strong><span>movement events</span></div>
-          <i class="fa-solid fa-arrow-right"></i>
-          <div><strong>SQL Store</strong><span>metrics</span></div>
-          <i class="fa-solid fa-plus"></i>
-          <div><strong>RAG Store</strong><span>reports / clips</span></div>
-          <i class="fa-solid fa-arrow-right"></i>
-          <div class="active"><strong>Copilot</strong><span>grounded answers</span></div>
-        </div>
-        <div class="evaluation-grid">
-          <article><p class="mono-label">Vision Evaluation</p><p>mAP, tracking IDF1, keypoint accuracy, and velocity error.</p></article>
-          <article><p class="mono-label">Assistant Evaluation</p><p>SQL execution accuracy, retrieval relevance, and citation faithfulness.</p></article>
-          <article><p class="mono-label">Stack</p><p>Python, FastAPI, TensorFlow / PyTorch, SQL, RAG, Node.js, and Flutter.</p></article>
-        </div>
-      </section>
-
-      <section class="section closing-section">
-        <div class="closing-card">
-          <p class="mono-label">Build Together</p>
-          <h2>Have a model idea or a product problem?<br /><em>Let us turn it into a system.</em></h2>
-          <div class="closing-actions">
-            <a class="button" href="mailto:syed18usman18@gmail.com">Start A Conversation <i class="fa-solid fa-arrow-right"></i></a>
-            <a href="https://github.com/syedusman-create" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/syed-usman-8a0903372" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <div class="arch-node out">
+            <span class="node-icon"><i class="fa-solid fa-chart-bar"></i></span>
+            <span class="label">explainability_service.py</span>
+            <span class="sub">+ VisualizationCard</span>
           </div>
         </div>
-      </section>
-    </main>
-    <footer class="site-footer compact-footer">
-      <p>&copy; <span id="year"></span> Syed Usman. AI/ML Engineer, Bangalore.</p>
-      <a href="index.html">Return to Simple View</a>
-    </footer>
-    <script src="script.js"></script>
-  </body>
+
+        <div style="margin-top: auto;">
+          <p class="mono-label" style="margin-bottom: 0.5rem;">Frontend components</p>
+          <div class="stack-chips">
+            <span>ChatInterface.tsx</span>
+            <span>ExplainabilityPanel.tsx</span>
+            <span>VisualizationCard.tsx</span>
+            <span>MessageBubble.tsx</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── EXPERIENCE ─────────────────────────────────────────────── -->
+  <section id="experience" class="framed-section section">
+    <div class="section-label"><span>02</span> Experience</div>
+    <div class="experience-card">
+      <div class="experience-title">
+        <p class="mono-label">January 2026 – Present</p>
+        <h2>AI/ML Intern</h2>
+        <p>E2E Rosh IT Solutions</p>
+      </div>
+      <div class="experience-detail">
+        <p class="mono-label">Anonymized Industry Client Project</p>
+        <h3>Computer Vision Safety Platform</h3>
+        <ul>
+          <li>Implemented driver fatigue detection with PERCLOS scoring using MediaPipe facial landmarks.</li>
+          <li>Built worker proximity monitoring, oil leak detection, and pose-estimation-based fall alert modules.</li>
+          <li>Developed FastAPI services for real-time inference results through REST APIs.</li>
+        </ul>
+        <div class="chip-row">
+          <span>Python</span><span>FastAPI</span><span>MediaPipe</span><span>Pose Estimation</span><span>REST APIs</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── RAG / LLM SYSTEMS ──────────────────────────────────────── -->
+  <section id="nlp" class="framed-section section">
+    <div class="section-label"><span>03</span> RAG &amp; LLM Systems</div>
+    <div class="section-heading split">
+      <h2>Assistant patterns selected by <em>risk and data shape.</em></h2>
+      <p>From retrieval-grounded knowledge bots to validated SQL analytics — each approach chosen to match the data and the stakes.</p>
+    </div>
+
+    <div class="method-grid">
+
+      <!-- RAG — top, flagship -->
+      <article class="highlight-method flagship-method">
+        <div class="demo-badge"><i class="fa-solid fa-bolt"></i> Flagship</div>
+        <p class="mono-label">01 | RAG</p>
+        <h3>Retrieval-Augmented Generation</h3>
+        <p>Grounded answers from enterprise records and academic resources — the system retrieves evidence before it generates, reducing hallucination at the source.</p>
+        <ul>
+          <li>Chunking strategies &amp; embedding models</li>
+          <li>Supabase pgvector semantic retrieval</li>
+          <li>Context assembly &amp; citation faithfulness</li>
+          <li>Permission-aware authenticated access</li>
+        </ul>
+        <p class="mono-label" style="margin-top: 0.75rem;">Built: ERP Chatbot · VTU Academic Bot · Enterprise Copilot</p>
+      </article>
+
+      <!-- Text-to-SQL — top, flagship -->
+      <article class="highlight-method flagship-method">
+        <div class="demo-badge"><i class="fa-solid fa-bolt"></i> Flagship</div>
+        <p class="mono-label">02 | Text-to-SQL</p>
+        <h3>Natural Language to Validated Query</h3>
+        <p>Natural language translated to T-SQL across multi-table joins, with validated execution and dynamic chart output — no manual SQL required.</p>
+        <ul>
+          <li>Schema grounding &amp; few-shot prompting</li>
+          <li>Validated query generation with error recovery</li>
+          <li>Bar, line &amp; pie chart rendering</li>
+          <li>AdventureWorks: sales, HR, production joins</li>
+        </ul>
+        <p class="mono-label" style="margin-top: 0.75rem;">Built: Analytics Copilot · Adventure Works SQL Bot</p>
+      </article>
+
+      <!-- LLM -->
+      <article class="highlight-method">
+        <p class="mono-label">03 | LLM Orchestration</p>
+        <h3>Generative Assistants</h3>
+        <p>Flexible conversations with structured outputs, controlled tool calls, and multi-agent coordination.</p>
+        <ul>
+          <li>System prompting &amp; few-shot examples</li>
+          <li>Guardrails, evals &amp; output schemas</li>
+          <li>LangChain agent orchestration</li>
+        </ul>
+      </article>
+
+      <!-- Semantic -->
+      <article>
+        <p class="mono-label">04 | Semantic Search</p>
+        <h3>Intent &amp; Similarity</h3>
+        <p>Route questions by meaning when users phrase the same request differently.</p>
+        <ul>
+          <li>Embeddings &amp; cosine similarity</li>
+          <li>NER and confidence thresholds</li>
+        </ul>
+      </article>
+
+      <!-- Rule-based -->
+      <article>
+        <p class="mono-label">05 | Rule-Based</p>
+        <h3>Controlled Workflows</h3>
+        <p>Deterministic dialogue paths for fixed processes and high-control interactions.</p>
+        <ul>
+          <li>Decision trees</li>
+          <li>Keyword and regex routing</li>
+          <li>Validated input slots</li>
+        </ul>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ── COMPUTER VISION ────────────────────────────────────────── -->
+  <section id="vision" class="framed-section section">
+    <div class="section-label"><span>04</span> Computer Vision</div>
+    <div class="section-heading split">
+      <h2>Pixels, landmarks,<br /><em>tracks and decisions.</em></h2>
+      <p>Vision skills applied in industrial safety monitoring and real-time sports performance analysis.</p>
+    </div>
+
+    <div class="pipeline-grid">
+      <article><span>01</span><h3>Detection</h3><p>Identify safety events, workers, objects, and scene signals frame by frame.</p><small>Object Detection</small></article>
+      <article><span>02</span><h3>Landmarks</h3><p>Facial landmarks and PERCLOS measures for fatigue monitoring.</p><small>MediaPipe</small></article>
+      <article><span>03</span><h3>Pose</h3><p>Skeleton-based action recognition for falls and exercise form.</p><small>MoveNet | Pose Estimation</small></article>
+      <article><span>04</span><h3>Temporal Analysis</h3><p>Tracking, velocity, and sequential event modelling from movement features.</p><small>Tracking | LSTM</small></article>
+    </div>
+
+    <article class="resume-project">
+      <p class="mono-label">Mobile Vision Project</p>
+      <h3>ScoutX Sports Performance Analysis</h3>
+      <p>Flutter app using TensorFlow Lite MoveNet for live joint tracking, rep counting, and posture-correction feedback.</p>
+      <div class="chip-row"><span>Flutter</span><span>TensorFlow Lite</span><span>MoveNet</span></div>
+    </article>
+  </section>
+
+  <!-- ── ARCHITECTURE CONCEPT ───────────────────────────────────── -->
+  <section id="build" class="framed-section section architecture-section">
+    <div class="section-label"><span>05</span> Architecture Concept</div>
+    <div class="section-heading centered">
+      <h2>Football Match <em>Analytics Copilot</em></h2>
+      <p>Applying the full RAG + SQL + vision stack to a searchable match-analysis workflow.</p>
+    </div>
+
+    <div class="architecture-flow">
+      <div><strong>Video</strong><span>frames</span></div>
+      <i class="fa-solid fa-arrow-right"></i>
+      <div><strong>Detection + Tracking</strong><span>players / ball</span></div>
+      <i class="fa-solid fa-arrow-right"></i>
+      <div><strong>Pose + Velocity</strong><span>movement events</span></div>
+      <i class="fa-solid fa-arrow-right"></i>
+      <div><strong>SQL Store</strong><span>metrics</span></div>
+      <i class="fa-solid fa-plus"></i>
+      <div><strong>RAG Store</strong><span>reports / clips</span></div>
+      <i class="fa-solid fa-arrow-right"></i>
+      <div class="active"><strong>Copilot</strong><span>grounded answers</span></div>
+    </div>
+
+    <div class="evaluation-grid">
+      <article><p class="mono-label">Vision Evaluation</p><p>mAP, tracking IDF1, keypoint accuracy, and velocity error.</p></article>
+      <article><p class="mono-label">Assistant Evaluation</p><p>SQL execution accuracy, retrieval relevance, and citation faithfulness.</p></article>
+      <article><p class="mono-label">Stack</p><p>Python, FastAPI, TensorFlow / PyTorch, SQL, RAG, Node.js, and Flutter.</p></article>
+    </div>
+  </section>
+
+  <!-- ── CLOSING ────────────────────────────────────────────────── -->
+  <section class="section closing-section">
+    <div class="closing-card">
+      <p class="mono-label">Open To Work · Fresher · Bangalore</p>
+      <h2>Looking for a team building<br /><em>RAG, LLM, or AI products.</em></h2>
+      <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0.5rem 0 0;">
+        I am actively looking for full-time roles and internships at AI startups and product companies. I ship fast, learn faster, and already have production-deployed work to show.
+      </p>
+      <div class="closing-actions">
+        <a class="button" href="mailto:syed18usman18@gmail.com">Start A Conversation <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="https://github.com/syedusman-create" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/syed-usman-8a0903372" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer compact-footer">
+  <p>&copy; <span id="year"></span> Syed Usman. AI/ML Engineer, Bangalore.</p>
+  <a href="index.html">Return to Simple View</a>
+</footer>
+
+<script src="script.js"></script>
+</body>
 </html>
